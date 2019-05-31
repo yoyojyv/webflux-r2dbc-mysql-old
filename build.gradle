@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'org.springframework.boot' version '2.2.0.M3'
 	id 'java'
 }
 
@@ -17,6 +17,9 @@ configurations {
 
 repositories {
 	mavenCentral()
+//	maven {
+//		url "https://repo.spring.io/libs-snapshot/"
+//	}
 	maven { url 'https://repo.spring.io/snapshot' }
 	maven { url 'https://repo.spring.io/milestone' }
 	maven { url "https://jcenter.bintray.com/" }
@@ -31,11 +34,10 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 
-	implementation 'org.springframework.data:spring-data-r2dbc:1.0.0.gh-75-SNAPSHOT'
+	implementation 'org.springframework.data:spring-data-r2dbc:1.0.0.BUILD-SNAPSHOT'
+	// implementation 'org.springframework.data:spring-data-r2dbc:1.0.0.M2'
 	// implementation 'org.springframework.data:spring-data-jdbc:1.0.0.r2dbc-SNAPSHOT'
-	implementation 'com.github.jasync-sql:jasync-r2dbc-mysql:0.9.41'
-	// implementation 'com.github.jasync-sql:jasync-mysql:0.8.31'
-	// implementation 'com.github.jasync-sql:r2dbc-mysql:1.0.0.M7'
 
+	implementation 'com.github.jasync-sql:jasync-r2dbc-mysql:0.9.53'
 
 }

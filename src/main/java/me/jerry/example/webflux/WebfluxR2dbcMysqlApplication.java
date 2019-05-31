@@ -16,6 +16,7 @@ import java.nio.charset.StandardCharsets;
 public class WebfluxR2dbcMysqlApplication {
 
     public static void main(String[] args) {
+        // lazy init
         // System.setProperty("spring.main.lazy-initialization", "true");
         SpringApplication.run(WebfluxR2dbcMysqlApplication.class, args);
     }
@@ -30,7 +31,7 @@ class MysqlApplicationConfiguration extends AbstractR2dbcConfiguration {
     @Override
     public ConnectionFactory connectionFactory() {
         String url = "mysql://test:test@127.0.0.1:3306/test";
-        return new JasyncConnectionFactory(new MySQLConnectionFactory(URLParser.INSTANCE.parseOrDie(url, StandardCharsets.UTF_8)));
+         return new JasyncConnectionFactory(new MySQLConnectionFactory(URLParser.INSTANCE.parseOrDie(url, StandardCharsets.UTF_8)));
     }
 
 }
